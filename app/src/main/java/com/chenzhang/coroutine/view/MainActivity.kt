@@ -9,6 +9,9 @@ import com.chenzhang.coroutine.R
 import com.chenzhang.coroutine.data.Room
 import kotlinx.android.synthetic.main.activity_main.*
 
+/**
+ * TODO: Retrofit service
+ */
 class MainActivity : AppCompatActivity() {
 
     private lateinit var viewModel: MainViewModel
@@ -17,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //https://developer.android.com/reference/android/arch/lifecycle/ViewModelProvider
         viewModel = ViewModelProvider(this, MainViewModelFactory()).get(MainViewModel::class.java)
 
         viewModel.getRooms().observe(this, Observer<List<Room>> { rooms ->

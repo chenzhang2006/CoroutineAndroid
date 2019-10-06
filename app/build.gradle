@@ -31,5 +31,6 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     testImplementation 'junit:junit:4.12'
 
+//    https://github.com/Kotlin/kotlinx.coroutines/blob/master/ui/coroutines-guide-ui.md
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.2"
 }
