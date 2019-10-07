@@ -6,12 +6,9 @@ import android.util.Log
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.chenzhang.coroutine.R
-import com.chenzhang.coroutine.data.Room
+import com.chenzhang.coroutine.data.Repo
 import kotlinx.android.synthetic.main.activity_main.*
 
-/**
- * TODO: Retrofit service
- */
 class MainActivity : AppCompatActivity() {
 
     private lateinit var viewModel: MainViewModel
@@ -23,9 +20,9 @@ class MainActivity : AppCompatActivity() {
         //https://developer.android.com/reference/android/arch/lifecycle/ViewModelProvider
         viewModel = ViewModelProvider(this, MainViewModelFactory()).get(MainViewModel::class.java)
 
-        viewModel.getRooms().observe(this, Observer<List<Room>> { rooms ->
-            Log.d(TAG, "View getting new data $rooms")
-            main_message.text = rooms.joinToString { it.name }
+        viewModel.getRooms().observe(this, Observer<List<Repo>> { repos ->
+            Log.d(TAG, "View getting new data $repos")
+            main_message.text = repos.joinToString { it.name }
         })
     }
 
