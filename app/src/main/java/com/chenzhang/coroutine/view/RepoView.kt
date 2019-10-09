@@ -20,27 +20,16 @@ class RepoView @JvmOverloads constructor(
 
     init {
         inflate(context, R.layout.repo_view, this)
-        orientation = HORIZONTAL
     }
 
-    @TextProp
-    fun setName(name: CharSequence) {
-        repo_name.text = name
+    @ModelProp
+    fun bindModel(model: Model) {
+        repo_id.text = model.repoId.toString()
+        repo_name.text = model.repoName
     }
 
-    @TextProp
-    fun setRepoId(repoId: CharSequence) {
-        repo_id.text = repoId
-    }
-
-//    @ModelProp
-//    fun bindModel(model: Model) {
-//        repo_id.text = model.repoId.toString()
-//        repo_name.text = model.repoName
-//    }
-
-//    data class Model(
-//        val repoId: Long,
-//        val repoName: String
-//    )
+    data class Model(
+        val repoId: Long,
+        val repoName: String
+    )
 }
